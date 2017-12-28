@@ -1,0 +1,23 @@
+import serial
+import sys
+import time
+
+ser = serial.Serial('COM4', baudrate = 9600, timeout = 1)
+time.sleep(3) # Wait for arduino. Not sure why this is needed, but it is.
+
+def getValues():
+  #ser.write(b'g')
+  arduinoData = ser.readline().decode('ascii')
+  print(arduinoData)
+  return int(arduinoData)
+
+while 1:
+  #userInput = input('Get data point?')
+  #if userInput == 'y' :
+     sensorValue = getValues()
+     if(sensorValue == 1):
+       print("OFF")
+     else:
+       print("ON")
+
+     sys.stdout.flush() # This helps if you're running from cygwin
