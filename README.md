@@ -9,3 +9,11 @@ Note that "develop" is the name of the branch.
 That didn't work.
 
 Try again.  This time from windows command line.
+
+Didn't work.
+
+Now try branching the local repo using the same name "develop".
+
+use 1) git checkout -b develop
+    2) Commit the changes
+    3) git push origin develop
