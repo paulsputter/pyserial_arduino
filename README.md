@@ -6,3 +6,6 @@ That was a mistake, as it pushed the changed file onto the master branch.
 Try again. First commit these new lines using git. Then do
   git push origin develop
 Note that "develop" is the name of the branch.
+That didn't work.
+
+Try again.  This time from windows command line.
