@@ -15,18 +15,25 @@ time.sleep(1) # Wait for arduino. Not sure why this is needed, but it is.
 def getValues():
   arduinoData = ser.readline().decode().strip()
   return arduinoData
-#counter = 0
+
 lastValue = 0
+import pdb; pdb.set_trace()
+
 while 1:
   sensorValue = getValues()
-  #print(sensorValue)
+  print(sensorValue)
   if(sensorValue.isnumeric()):
-      sensorValue = int(sensorValue)
-      #if(sensorValue != lastValue):
-         #lastValue = sensorValue
-      if(sensorValue == 1):
-            print("ON")
-      else:
-            print("OFF")
+    sensorValue = int(sensorValue)
+    #if(sensorValue != lastValue):
+    #lastValue = sensorValue
+    if(sensorValue == 0 or sensorValue == 1):
+      if(lastValue != sensorValue):
+        print("value changing")
+        lastValue = sensorValue
+      print(sensorValue)
+    else:
+      print("not 0 or 1")
+  else:
+    print("non numeric")
 
  # sys.stdout.flush() # This helps if you're running from cygwin
