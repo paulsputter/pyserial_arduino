@@ -1,6 +1,9 @@
 #
 # This is the best I can do so far to avoid sychronization miseries with
 # Python not getting the number being sent by Arduino.
+@ Adding this comment on 12/31/2017:
+#  I am tracking this file and the related .ino on github in the
+#  pyserial_arduino repository. 
 #
 
 
